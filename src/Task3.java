@@ -17,9 +17,12 @@ public class Task3 {
                 inputString += " ";
                 StringBuilder currentWord = new StringBuilder();
                 for(char letter : inputString.toCharArray()){
-                    if(letter != ' '){
+                    if(letter != ' ' && letter != '.' && letter != '!' && letter != '?'){
                         currentWord.append(letter);
                     } else {
+                        if(currentWord.toString().equals("")){
+                            continue;
+                        }
                         if(words.get(currentWord.toString()) != null){
                             words.put(currentWord.toString(), words.get(currentWord.toString()) + 1);
                         } else {
